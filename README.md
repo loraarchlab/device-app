@@ -12,3 +12,4 @@ The app sends the following payload to the gateway, depending on the device runn
 ## Todo list
 1. Documentation for the app needs to be provided.
 2. A way to trigger an interruption for the shifting between bike running modes is needed.
+3. Currently the project is based on Keil IDE on Windows, which needs to be reproduced purely on CMake for system portability.
