@@ -1,15 +1,14 @@
 # device-app
 
-Application for LoRa bike device based on STM32 board, together with NEO-7N GPS module.
+## Introduction
 
-## Function
+![Architecture of Bike-sharing System Based on LoRaWAN](arch.png)
 
-The app sends the following payload to the gateway, depending on the device running mode:
-1. UnLock flag (when the bike is unlocked)
-2. GPS data (when the bike keeps moving)
-3. Lock flag (when the bike is locked)
+This repo is the application to be installed in the mobile LoRAWAN node (the leftmost column in the above architecture). It sends the GPS data to the gateway periodically. By default, duty cycle varies from 4s to 6s, spreading Factor is 12, spectrum bandwidth is 125kHz and ACK mechanism is enabled.
 
-## Todo list
-1. Documentation for the app needs to be provided.
-2. A way to trigger an interruption for the shifting between bike running modes is needed.
-3. Currently the project is based on Keil IDE on Windows, which needs to be reproduced purely on CMake for system portability.
+The above default configuration and high-level application logical is in `src/LoRaWANMeasurement/main.c`. You can change them based on LoRaWAN regional parameters specification.
+
+## Prerequisites
+1. Windows 10 with Keil IDE installed (Currently the repo can only be compiled with Keil IDE. Need to move to CMake for system portability)
+2. LoRa radio transceiver with STM32 board
+3. NEO-7N GPS module
